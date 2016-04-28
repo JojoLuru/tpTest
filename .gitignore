@@ -1,0 +1,8 @@
+build
+build.xml
+dist
+manifest.mf
+nbProject
+Icon
+.DS_Store
+target
