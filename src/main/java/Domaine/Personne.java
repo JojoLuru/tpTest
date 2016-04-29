@@ -39,7 +39,7 @@ public class Personne implements Comparable {
   public int getNbCafes(){return this.nbCafes;}
   public void incCafes(int inc){nbCafes = nbCafes + inc;}
     
-  public boolean equals (Object obj) {return ((Personne)obj).id == id;}
+  public boolean equals (Object obj) {return ((Personne)obj).nom == nom;}
   
   public String toString () {return nom + " " + prenom;}
   
