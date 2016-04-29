@@ -8,7 +8,7 @@ package domaine;
  * @author Raillard JOnathan
  * @version 2.0
  */
-public class Personne implements Comparable {
+public class Personne {
 
   private int id;          /* Numéro de la personne: identifiant */
   private String nom;      /* Nom */
