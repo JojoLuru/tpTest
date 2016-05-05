@@ -1,5 +1,6 @@
 
 import base.ConnexionBase;
+import base.PersonneDao;
 import com.mysql.jdbc.Connection;
 import domaine.Personne;
 import java.sql.SQLException;
@@ -35,6 +36,7 @@ public class TestApp{
     @Test
     public void updateEmpoye(){
         emp.setId(9);
+        assertTrue(emp.getId()==9);
     }
     
     @Test
@@ -60,7 +62,7 @@ public class TestApp{
     @BeforeTest
     private void createFrm(){
         frm = new FrmMain();
-    } 
+    }
     
     @Test
     private void instanceFrmTest(){
@@ -69,13 +71,34 @@ public class TestApp{
     
     @BeforeTest
     private void listesTest(){
-        lstEmp = new ListePersonnes();
+        lstEmp = new ListePersonnes(PersonneDao.getListePersonnes());
     }
     
     @Test
     private void listesImportTest(){
         assertTrue(lstEmp!=null);
     }
+    
+    @Test
+    private void listesGetValid(){
+        Personne pers = new Personne("Coralie","Raillard",0);
+        lstEmp.add(pers, lstEmp.size());
+        lstEmp.setPos(lstEmp.size()-1);
+        assertTrue((lstEmp.get(lstEmp.size()-1).equals(pers)));
+    }
+    
+    @Test
+    private void listesGetInvalid(){
+        Personne pers = (Personne)lstEmp.get(lstEmp.size()+1);
+        assertTrue(pers == null);
+    }
+
+    @Test
+    private void listesGetInvalid2(){
+        Personne pers = (Personne)lstEmp.get(-1);
+        assertTrue(pers == null);
+    }
+    
     
     @Test
     private void testPos(){
@@ -85,11 +108,19 @@ public class TestApp{
         assertTrue((lstEmp.getCourant()).equals(pers));
     }
     
+    private void deleteTest(){
+        Personne pers = (Personne)lstEmp.get(lstEmp.getPos());
+        lstEmp.delCourant();
+        assertFalse(lstEmp.contains(pers));
+    }
+    
     @Test
     private void containsTest(){
         lstEmp.add(emp, lstEmp.size());
         assertTrue(lstEmp.contains(emp));
     }
+    
+    
     
     @Test
     private void connectionTest(){
@@ -101,7 +132,6 @@ public class TestApp{
     private void connectionCloseTest() throws SQLException{
         con = (Connection)ConnexionBase.get();
         con.close();
-        assertTrue(con==null);
+        assertTrue(con.equals(null));
     }*/
-    
 }

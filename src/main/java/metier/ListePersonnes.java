@@ -1,6 +1,5 @@
 package metier;
 
-import base.PersonneDao;
 import domaine.Personne;
 
 /**
@@ -14,14 +13,5 @@ import domaine.Personne;
 public class ListePersonnes extends ListeObjects {
 
   /** Constructeur */
-  public ListePersonnes () {liste = PersonneDao.getListePersonnes();}
-
-  /** Retourne la personne courante, null si la position courante est NO_POS */
-  public Personne getCourant () {return (Personne)super.getCourant();}
-
-  /** Retourne la personne d'indice k, null si k n'est pas correctement défini */
-  public Personne get (int k) {return (Personne)super.get(k);}
-  
-
-
+  public ListePersonnes (java.util.List<Personne> liste) {setObjects(liste);}
 } // ListePersonnes

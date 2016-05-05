@@ -1,5 +1,6 @@
 package presentation;
 
+import base.PersonneDao;
 import domaine.Personne;
 import metier.ListePersonnes;
 
@@ -15,9 +16,7 @@ import metier.ListePersonnes;
 
 public class FrmMain extends java.awt.Frame {
   private ListePersonnes lstPers;
-
-
-    
+ 
   /** Constructeur */
   public FrmMain () {
     initComponents();
@@ -31,20 +30,20 @@ public class FrmMain extends java.awt.Frame {
   
   private void listerEmploye(){
     lstPersonnes.removeAll();
-    lstPers = new ListePersonnes();
+    lstPers = new ListePersonnes(PersonneDao.getListePersonnes());
     for (int i = 0; i < lstPers.size(); i++) {
        lstPersonnes.add(((Personne)(lstPers.get(i))).toString());
     }
   }
 
   private void miseAJourDesChamps(){
-    Personne pers = lstPers.get(lstPersonnes.getSelectedIndex());
+    Personne pers = (Personne)lstPers.get(lstPersonnes.getSelectedIndex());
     tfCafes.setText(String.valueOf(pers.getNbCafes())); 
     majBouton();
   }
   
   private void incCafe(int inc){
-    Personne pers = lstPers.get(lstPersonnes.getSelectedIndex());
+    Personne pers = (Personne)lstPers.get(lstPersonnes.getSelectedIndex());
     pers.incCafes(inc);
     miseAJourDesChamps();
   }
