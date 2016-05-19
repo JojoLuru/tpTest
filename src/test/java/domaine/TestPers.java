@@ -1,7 +1,6 @@
 package domaine;
 
-import base.ConnexionBase;
-import com.mysql.jdbc.Connection;
+
 import static org.testng.Assert.*;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,7 +10,6 @@ public class TestPers{
     Personne emp;
     Personne emp2;
     Personne emp3;
-    Connection con;
     
     @BeforeTest
     protected void createEmploye(){
@@ -51,18 +49,5 @@ public class TestPers{
     @Test
     public void compareEmployeMinor(){
         assertTrue(emp3.compareTo(emp) != 0);
-    }
-        
-    @Test
-    private void connectionTest(){
-        con = (Connection)ConnexionBase.get();
-        assertNotNull(con);
-    }
-    
-    /*@Test
-    private void connectionCloseTest(){
-        con = (Connection)ConnexionBase.get();
-        con.close();
-        assertTrue(con.equals(null));
-    }*/
+    }       
 }
