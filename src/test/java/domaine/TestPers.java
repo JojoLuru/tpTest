@@ -1,26 +1,20 @@
+package domaine;
 
 import base.ConnexionBase;
-import base.PersonneDao;
 import com.mysql.jdbc.Connection;
-import domaine.Personne;
-import java.sql.SQLException;
-import metier.ListePersonnes;
 import static org.testng.Assert.*;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import presentation.FrmMain;
 
-public class TestApp{  
+public class TestPers{  
     
     Personne emp;
     Personne emp2;
     Personne emp3;
-    ListePersonnes lstEmp;
-    FrmMain frm;
     Connection con;
     
     @BeforeTest
-    public void createEmploye(){
+    protected void createEmploye(){
         emp2 = new Personne(1, "Raillard", "Jonathan", 0);
         emp = new Personne("Raillard","Jonathan", 0);
         emp3 = new Personne("Dupond","Mathieu", 1);
@@ -41,12 +35,12 @@ public class TestApp{
     
     @Test
     public void equalsEmploye(){
-        assertTrue(emp2.equals(emp));
+        assertEquals(emp2 , emp);
     }
     
     @Test
     public void notEqualsEmploye(){
-        assertFalse(emp3.equals(emp));
+        assertNotEquals(emp3, emp);
     }
     
     @Test
@@ -59,77 +53,14 @@ public class TestApp{
         assertTrue(emp3.compareTo(emp) != 0);
     }
         
-    @BeforeTest
-    private void createFrm(){
-        frm = new FrmMain();
-    }
-    
-    @Test
-    private void instanceFrmTest(){
-        assertTrue(frm != null);
-    }
-    
-    @BeforeTest
-    private void listesTest(){
-        lstEmp = new ListePersonnes(PersonneDao.getListePersonnes());
-    }
-    
-    @Test
-    private void listesImportTest(){
-        assertTrue(lstEmp!=null);
-    }
-    
-    @Test
-    private void listesGetValid(){
-        Personne pers = new Personne("Coralie","Raillard",0);
-        lstEmp.add(pers, lstEmp.size());
-        lstEmp.setPos(lstEmp.size()-1);
-        assertTrue((lstEmp.get(lstEmp.size()-1).equals(pers)));
-    }
-    
-    @Test
-    private void listesGetInvalid(){
-        Personne pers = (Personne)lstEmp.get(lstEmp.size()+1);
-        assertTrue(pers == null);
-    }
-
-    @Test
-    private void listesGetInvalid2(){
-        Personne pers = (Personne)lstEmp.get(-1);
-        assertTrue(pers == null);
-    }
-    
-    
-    @Test
-    private void testPos(){
-        Personne pers = new Personne("Jonathan","Raillard",0);
-        lstEmp.add(pers, lstEmp.size());
-        lstEmp.setPos(lstEmp.size()-1);
-        assertTrue((lstEmp.getCourant()).equals(pers));
-    }
-    
-    private void deleteTest(){
-        Personne pers = (Personne)lstEmp.get(lstEmp.getPos());
-        lstEmp.delCourant();
-        assertFalse(lstEmp.contains(pers));
-    }
-    
-    @Test
-    private void containsTest(){
-        lstEmp.add(emp, lstEmp.size());
-        assertTrue(lstEmp.contains(emp));
-    }
-    
-    
-    
     @Test
     private void connectionTest(){
         con = (Connection)ConnexionBase.get();
-        assertTrue(con !=null);
+        assertNotNull(con);
     }
     
     /*@Test
-    private void connectionCloseTest() throws SQLException{
+    private void connectionCloseTest(){
         con = (Connection)ConnexionBase.get();
         con.close();
         assertTrue(con.equals(null));
