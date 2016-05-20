@@ -1,6 +1,6 @@
-package base;
+package ch.hegjojo.base;
 
-import base.mysql.Outils;
+import ch.hegjojo.base.mysql.Outils;
 import java.sql.Connection;
 import java.sql.SQLException;
 

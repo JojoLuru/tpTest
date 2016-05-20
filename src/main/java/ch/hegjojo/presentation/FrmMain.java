@@ -1,8 +1,8 @@
-package presentation;
+package ch.hegjojo.presentation;
 
-import base.PersonneDao;
-import domaine.Personne;
-import metier.ListePersonnes;
+import ch.hegjojo.base.PersonneDao;
+import ch.hegjojo.domaine.Personne;
+import ch.hegjojo.metier.ListePersonnes;
 
 
 /**

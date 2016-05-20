@@ -1,7 +1,8 @@
-package metier;
+package ch.hegjojo.metier;
 
-import base.PersonneDao;
-import domaine.Personne;
+import ch.hegjojo.metier.ListePersonnes;
+import ch.hegjojo.base.PersonneDao;
+import ch.hegjojo.domaine.Personne;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;

@@ -1,4 +1,4 @@
-package metier;
+package ch.hegjojo.metier;
 
 import java.util.List;
 import java.util.ArrayList;

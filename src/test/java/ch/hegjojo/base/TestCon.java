@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package base;
+package ch.hegjojo.base;
 
+import ch.hegjojo.base.ConnexionBase;
 import com.mysql.jdbc.Connection;
 import java.sql.SQLException;
 import static org.testng.Assert.assertNotNull;

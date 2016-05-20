@@ -1,6 +1,7 @@
-package domaine;
+package ch.hegjojo.domaine;
 
 
+import ch.hegjojo.domaine.Personne;
 import static org.testng.Assert.*;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

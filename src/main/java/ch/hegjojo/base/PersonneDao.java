@@ -1,6 +1,6 @@
-package base;
+package ch.hegjojo.base;
 
-import domaine.Personne;
+import ch.hegjojo.domaine.Personne;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

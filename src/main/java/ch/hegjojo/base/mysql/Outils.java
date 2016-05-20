@@ -1,7 +1,7 @@
 /************************************************/
 /**** CETTE CLASSE NE DOIT PAS ÊTRE MODIFIÉE ****/
 /************************************************/
-package base.mysql;
+package ch.hegjojo.base.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

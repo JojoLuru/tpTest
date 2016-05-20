@@ -1,4 +1,4 @@
-package domaine;
+package ch.hegjojo.domaine;
 
 /**
  * Module 634.1-Programmation / Gestion des contacts

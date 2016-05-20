@@ -1,6 +1,6 @@
-package metier;
+package ch.hegjojo.metier;
 
-import domaine.Personne;
+import ch.hegjojo.domaine.Personne;
 
 /**
  * Module 634.1-Programmation / Gestion des contacts
