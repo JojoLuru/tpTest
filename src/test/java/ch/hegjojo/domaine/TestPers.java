@@ -51,4 +51,18 @@ public class TestPers{
     public void compareEmployeMinor(){
         assertTrue(emp3.compareTo(emp) != 0);
     }       
+    
+    @Test 
+    public void setNomTest(){
+        emp2.setNom("Dupond");
+        assertTrue(emp2.getNom().equals("Dupond"));
+    }
+    
+    @Test 
+    public void setPrenomTest(){
+        emp2.setPrenom("Toto");
+        assertTrue(emp2.getPrenom().equals("Toto"));
+    }
+    
+    
 }

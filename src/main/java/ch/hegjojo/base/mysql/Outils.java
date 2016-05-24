@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import org.h2.jdbcx.JdbcDataSource;
 
 /**
  * Connexion à la base MySQL.
@@ -24,4 +25,12 @@ public class Outils {
     return DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nomBase, props);
   } // connect
 
+  /*public static Connection connectH2(String nomBase) throws ClassNotFoundException, SQLException{
+      JdbcDataSource ds = new JdbcDataSource();
+      ds.setURL("jdbc:h2:~/test");
+      ds.setUser("sa");
+      ds.setPassword("sa");
+      Connection con = ds.getConnection();
+      return con;
+  }*/
 } // Outils

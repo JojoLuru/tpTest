@@ -5,11 +5,9 @@
  */
 package ch.hegjojo.base;
 
-import ch.hegjojo.base.ConnexionBase;
 import com.mysql.jdbc.Connection;
 import java.sql.SQLException;
-import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -33,8 +31,8 @@ public class TestCon {
     
     /*@Test
     public void connectionCloseTest(){
-        try {con.close(); con = null;}
-        catch (SQLException e) {System.out.println("ConnexionBase: " + e.getMessage()); e.printStackTrace();}
-        assertTrue(con.equals(null));
+        try {con.close();}
+        catch (SQLException e) {System.out.println("ConnexionBase: " + e.getMessage());}
+        assertNull(con);
     }*/
 }

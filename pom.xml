@@ -81,7 +81,6 @@
                     </execution>
                 </executions>
             </plugin>
-            
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
@@ -103,8 +102,6 @@
             
         </plugins>
     </build>
-    
-
 <dependencies>
     <dependency>
         <groupId>org.testng</groupId>

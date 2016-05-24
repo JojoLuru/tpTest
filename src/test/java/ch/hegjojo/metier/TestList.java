@@ -65,14 +65,37 @@ public class TestList {
     }
     
     @Test
+    public void testGetCourantNull(){
+        lstEmp.setPos(lstEmp.size()+1);
+        lstEmp.setPos(-1);
+        assertNull(lstEmp.getCourant());
+    }
+    
+    @Test
     public void deleteTest(){
+        lstEmp.setPos(lstEmp.size());
+        lstEmp.delCourant();
         Personne pers = (Personne)lstEmp.get(lstEmp.getPos());
+        lstEmp.setPos(lstEmp.size()-1);
         lstEmp.delCourant();
         assertFalse(lstEmp.contains(pers));
     }
     
+        @Test
+    public void delTest(){
+        lstEmp.del(-1);
+        lstEmp.del(lstEmp.size()+1);
+        Personne pers = (Personne)lstEmp.get(lstEmp.size()-1);
+        lstEmp.del(lstEmp.size()-1);
+        assertFalse(lstEmp.contains(pers));
+    }
+    
+    
+    
     @Test
-    public void containsTest(){
+    public void addContainsTest(){
+        lstEmp.add(emp, -1);
+        lstEmp.add(emp, lstEmp.size()+1);
         lstEmp.add(emp, lstEmp.size());
         assertTrue(lstEmp.contains(emp));
     }

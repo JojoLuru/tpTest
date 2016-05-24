@@ -3,6 +3,7 @@ package ch.hegjojo.base;
 import ch.hegjojo.base.mysql.Outils;
 import java.sql.Connection;
 import java.sql.SQLException;
+import org.h2.tools.Server;
 
 /**
  * Module 634.1-Programmation / Gestion des contacts

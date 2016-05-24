@@ -28,11 +28,9 @@ public class PersonneDao {
               Personne pers = new Personne(st.getInt("IdEmpl"), st.getString("Nom"), st.getString("Prenom"),st.getInt("COUNT(NbCafes)"));
               lstPers.add(pers);
           }
-          stmtPers.close();
-          
+          stmtPers.close();   
       } catch (SQLException e) {System.out.println(e.getMessage()); System.out.println(e.getStackTrace());}  
-      System.out.println(lstPers.size());
-      return lstPers;
+    return lstPers;
   } // getListeEmployes
  
   
